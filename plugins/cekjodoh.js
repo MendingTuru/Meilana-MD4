@@ -22,7 +22,7 @@ await conn.sendHydrated(m.chat, caption, wm, x.thumbnail, null, null, null, null
 
 }
 handler.help = ['cekjodoh <gw>|<lo>']
-handler.tags = ['kerang', 'fun']
+handler.tags = ['fun']
 handler.command = /^cekjodoh/i
 
 handler.limit = true
