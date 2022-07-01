@@ -8,7 +8,7 @@ let handler = async(m, { conn }) => {
 	await conn.sendKontak(m.chat, kontak2, fkontak, { contexInfo: { forwardingScore: 99999, isForwarded: true } })
 	]
 	await delay(100)
-  return conn.sendMessage(m.chat, { text: `_*Hay kak @${await m.sender.split('@')[0]}, itu nomor ownerku yang paling ganteng jangan dispam yah ^_^*_`, mentions: [m.sender] }, { quoted: conn.p[id][0] })
+  return conn.sendMessage(m.chat, { text: `*Hay kak @${await m.sender.split('@')[0]}, itu nomor ownerku yang paling ganteng jangan dispam yah ^_^*`, mentions: [m.sender] }, { quoted: conn.p[id][0] })
   await delay(100)
   return delete conn.p[id]
 }
