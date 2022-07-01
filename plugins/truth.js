@@ -51,5 +51,6 @@ handler.help = ['truth']
 handler.tags = ['fun']
 handler.command = /^(truth|kebenaran|kejujuran)$/i
 handler.limit = true
+handler.group = true
 
 module.exports = handler
