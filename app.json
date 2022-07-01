@@ -1,7 +1,7 @@
 {
   "name": "family",
   "description": "WhatsApp Bot Using Library Baileys Multi Device",
-  "repository": "https://github.com/fokusdotid/family-md",
+  "repository": "https://github.com/kokopangeran",
   "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["bot", "whatsapp", "whatsapp-bot", "family", "familymd", "familybot", "family-md", "games-wabot", "epic rpg"],
   "buildpacks": [
