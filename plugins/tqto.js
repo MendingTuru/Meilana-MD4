@@ -12,7 +12,7 @@ https://github.com/Nurutomo
 Istikmal: 
 https://github.com/BochilGaming
 Koko Pangeran:
-https://github.com/kokopangeran
+https://github.com/MendingTuru
 Ariffb: 
 https://github.com/Ariffb25
 Aguz Familia:
