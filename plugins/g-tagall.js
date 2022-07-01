@@ -12,7 +12,8 @@ let handler = async(m, { isOwner, isAdmin, conn, text, participants }) => {
 handler.help = ['tagall <message>']
 handler.tags = ['group']
 handler.command = /^(t(agall)?)$/i
-
+handler.botAdmin = true
+handler.admin = true
 handler.group = true
 
 module.exports = handler
