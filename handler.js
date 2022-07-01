@@ -287,7 +287,7 @@ module.exports = {
                     delete: true,
                     antiLink: false,
                     expired: 0,
-                    antiBadword: false,
+                    antiBadword: true,
                     antispam: true,
                     antitroli: false,
                     antivirtex: false,
