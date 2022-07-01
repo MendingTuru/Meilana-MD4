@@ -278,6 +278,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+    let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/yuta.jpg')}, { upload: conn.waUploadToServer })
     await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}infobot`)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
