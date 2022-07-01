@@ -20,7 +20,9 @@ const defaultMenu = {
 ├ Uptime: *%uptime (%muptime)*
 ├ Database: %rtotalreg dari %totalreg
 ├ Github:
-├ %github
+├ https://github.com/kokopangeran
+├ Insta:
+├ https://instagram.com/kokopangeran_
 └────
 %readmore`.trim(),
   header: '┌─〔 %category 〕',
