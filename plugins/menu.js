@@ -215,6 +215,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Vote & Absen', rowId: `${_p}? vote` },
           { title: "Al-Qur\'an", rowId: `${_p}? quran` },
           { title: 'Pengubah Suara', rowId: `${_p}? audio` },
+          { title: 'Stalkers', rowId: `${_p}? stalk` },
           { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
           { title: 'Info', rowId: `${_p}? info` },
           { title: 'Tanpa Kategori', rowId: `${_p}? tanpakategori` },
@@ -282,7 +283,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let message = await prepareWAMessageMedia({ image: fs.readFileSync('./src/pangeran.png')}, { upload: conn.waUploadToServer })
     await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}infobot`)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
