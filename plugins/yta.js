@@ -14,4 +14,5 @@ handler.help = ['ytmp3 <query>']
 handler.tags = ['downloader']
 handler.command = /^yt(a(udio)?|mp3|musik|lagu)$/i
 handler.limit = true
+handler.premium =true
 module.exports = handler
