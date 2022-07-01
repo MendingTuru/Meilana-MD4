@@ -6,7 +6,6 @@ let handler = async (m, { conn }) => {
 "Apa makanan yang kamu sukai?",
 "Siapa yang mau di jadikan pacar di gc ini?",
 "Apa mimpi terburukmu?",
-"Apa hal paling memalukan dari temanmu?",
 "Pernah suka sama siapa aja? berapa lama?",
 "Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)",
 "Apa ketakutan terbesar kamu?",
