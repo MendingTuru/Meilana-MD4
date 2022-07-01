@@ -284,7 +284,7 @@ module.exports = {
                     desc: false,
                     descUpdate: false,
                     stiker: false,
-                    delete: false,
+                    delete: true,
                     antiLink: false,
                     expired: 0,
                     antiBadword: false,
