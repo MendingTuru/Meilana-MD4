@@ -1,5 +1,5 @@
 {
-    "name": "Family-MD",
+    "name": "Nauran-MD",
     "version": "2.4.0",
     "description": "Simle Bot WhatsApp with Baileys Multi Device",
     "depecrated": false,
@@ -29,9 +29,9 @@
         "stikerin",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/fokusdotid/family-md",
+    "homepage": "https://github.com/kokopangeran/pangeran-md",
     "author": {
-        "name": "Fokus ID"
+        "name": "Koko Pangeran"
     },
     "repository": {
         "type": "git",
