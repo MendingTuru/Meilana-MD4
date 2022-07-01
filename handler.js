@@ -20,7 +20,7 @@ module.exports = {
         if (!m) return
         
         global.namabot = await this.user.name
-        global.wm = namabot + ' ву ƒσкυѕ ι∂'
+        global.wm = namabot + ' ву ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
         //console.log(JSON.stringify(m, null, 4))
         try {
             m = simple.smsg(this, m) || m
@@ -99,7 +99,7 @@ module.exports = {
                     if (!isNumber(user.lasthunt)) user.lasthunt = 0
                     if (!isNumber(user.lastweekly)) user.lastweekly = 0
                     if (!isNumber(user.lastmonthly)) user.lastmontly = 0  
-                    if (!('registered' in user)) user.registered = false
+                    if (!('registered' in user)) user.registered = true
                     if (!user.registered) {
                     if (!('name' in user)) user.name = this.getName(m.sender)
                     if (!('email' in user)) user.email = ''
@@ -204,7 +204,7 @@ module.exports = {
                     lasthunt: 0,
                     lastweekly: 0,
                     lastmonthly: 0,
-                    registered: false,
+                    registered: true,
                     name: this.getName(m.sender),
                     email: '',
                     label: '',
@@ -275,23 +275,23 @@ module.exports = {
                     closeGroup: false,
                     add: 0,
                     isBanned: false,
-                    welcome: true,
-                    detect: true,
+                    welcome: false,
+                    detect: false,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    desc: true,
-                    descUpdate: true,
+                    desc: false,
+                    descUpdate: false,
                     stiker: false,
                     delete: false,
-                    antiLink: true,
+                    antiLink: false,
                     expired: 0,
-                    antiBadword: true,
+                    antiBadword: false,
                     antispam: true,
                     antitroli: false,
                     antivirtex: false,
-                    viewonce: true,
+                    viewonce: false,
                     nsfw: false,
                     simi: false,
                     clear: false,
