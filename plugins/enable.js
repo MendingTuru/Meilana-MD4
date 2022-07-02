@@ -126,14 +126,14 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLink = isEnable
       break
-    case 'anti+212':
+    case 'antiorangluar':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
-      chat.anti+212 = isEnable
+      chat.antiOrangLuar = isEnable
       break
     case 'stiker':
       if (m.isGroup) {
@@ -303,7 +303,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antitroli
 ├ antibuggc
 ├ antisatir
-├ anti+212
+├ antiorangluar
 ├ autolevelup
 ├ antibadword
 ├ delete
