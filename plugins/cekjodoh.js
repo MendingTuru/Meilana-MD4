@@ -1,5 +1,3 @@
-import fetch from 'node-fetch'
-
 let handler = async (m, { conn, usedPrefix, command, text }) => {
 
 let urut = text.split`|`
@@ -23,7 +21,7 @@ await conn.sendHydrated(m.chat, caption, wm, x.thumbnail, null, null, null, null
 }
 handler.help = ['cekjodoh <gw>|<lo>']
 handler.tags = ['fun']
-handler.command = ['cekjodoh']
+handler.command = /^(cekjodoh)$\i
 handler.group = true
 handler.limit = true
 
