@@ -260,6 +260,7 @@ module.exports = {
                     if (!('stiker' in chat)) chat.stiker = false
                     if (!('delete' in chat)) chat.delete = false
                     if (!('antiLink' in chat)) chat.antiLink = true
+                    if (!('antiOrangLuar' in chat)) chat.antiOrangLuar = true
                     if (!isNumber(chat.expired)) chat.expired = 0
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antispam' in chat)) chat.antispam = true
@@ -286,6 +287,7 @@ module.exports = {
                     stiker: false,
                     delete: true,
                     antiLink: false,
+                    antiOrangLuar: false,
                     expired: 0,
                     antiBadword: true,
                     antispam: true,
