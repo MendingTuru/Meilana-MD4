@@ -1,5 +1,5 @@
+const fetch = require('node-fetch')
 let handler = async (m, { conn, usedPrefix, command, text }) => {
-
 let urut = text.split`|`
   let nama = urut[0]
   let pasangan = urut[1]
