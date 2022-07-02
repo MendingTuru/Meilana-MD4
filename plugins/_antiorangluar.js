@@ -1,3 +1,5 @@
+let handler = m => m
+
 export async function before(m, { isAdmin, isBotAdmin }) {
    if (m.sender.startsWith('212' || '212')) {
    	global.db.data.users[m.sender].banned = true
