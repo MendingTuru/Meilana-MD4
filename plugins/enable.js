@@ -266,6 +266,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       setting.epe = isEnable
       break
+    case 'antisatir':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiSatir = isEnable
+      break
     case 'simi':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -284,6 +293,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antilink
 ├ antitroli
 ├ antibuggc
+├ antisatir
 ├ autolevelup
 ├ antibadword
 ├ delete
@@ -292,7 +302,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ stiker
 ├ simi
 ├ welcome
-│ 
+│ ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
 └────
 Contoh:
 ${usedPrefix}on welcome
