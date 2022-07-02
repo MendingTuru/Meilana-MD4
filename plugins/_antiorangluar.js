@@ -22,4 +22,8 @@ conn.groupParticipantsUpdate(m.chat, [user], "remove")
 conn.reply('Awkawk Orang Asin :l')
 conn.groupParticipantsUpdate(m.chat, [user], "remove")
    } 
-    }
+  }
+return true
+}
+
+module.exports = handler
