@@ -608,7 +608,7 @@ module.exports = {
 
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                            text = (action === 'out' ? (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+                            text = (action === 'remove' ? (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
                             let wel = API('males', '/welcome2', {
                                 profile: pp,
                                 username: await this.getName(user),
@@ -624,7 +624,7 @@ module.exports = {
                                 membercount: groupMetadata.participants.length
                             })
                             await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa beban', action === 'add' ? '.intro' : 'MendingTuru')
-                            await this.send3TemplateButtonImg(id, action === 'out' ? wel : lea, text, wm, action === 'out' ? 'selamat datang' : 'sampai jumpa beban', action === 'out' ? '.out' : 'MendingTuru')
+                            await this.send3TemplateButtonImg(id, action === 'remove' ? wel : lea, text, wm, action === 'remove' ? 'selamat datang' : 'sampai jumpa beban', action === 'remove' ? '.beban' : 'MendingTuru')
                         }
                     }
                 }
