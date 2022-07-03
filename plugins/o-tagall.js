@@ -12,6 +12,5 @@ handler.tags = ['owner']
 handler.command = /^(otagall|otagal|otall|ot)$/i
 
 handler.group = true
-handler.admin = true
-handler.botAdmin = true
+handler.owner = true
 module.exports = handler
