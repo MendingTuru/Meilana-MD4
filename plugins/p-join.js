@@ -1,72 +1,32 @@
-let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
-let fetch = require('node-fetch')
+let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})( [0-9]{1,3})?/i
 
-let handler = async (m, { conn, args, usedPrefix, command, isPrems, isOwner, isROwner}) => {
-    if (!args[0]) throw `Link nya mana?`
-    let [_, code] = args[0].match(linkRegex) || []
-    if (!code) throw 'Link Salah'
-    let user = db.data.users[m.sender]
-
-    if (!(isPrems || isOwner || isROwner)) {
-        if (user.joincount === 0 ) throw `Kamu sudah melebihi token/limit memasukkan bot ke dalam grup!\nsilahkan membeli premium agar bisa memasukan bot kedalam grup lagi!`
-        user.joincount -= 1
-        let res = await conn.groupAcceptInvite(code)
-        conn.reply(m.chat, 'Joining group...', m).then(async() => {
-            var jumlahHari = 86400000 * 0.1
-            var now = new Date() * 1
-            if (now < global.db.data.chats[res].expired) global.db.data.chats[res].expired += jumlahHari
-            else global.db.data.chats[res].expired = now + jumlahHari
-                conn.reply(m.chat, `Berhasil join grup ${await conn.getName(res)}\nBot akan keluar secara otomatis setelah: ${msToDate(global.db.data.chats[res].expired - now)}.\nToken joincount mu: ${user.joincount}/1`, m)
-                await conn.send2ButtonImg(res, await(await fetch(img)).buffer(), `${conn.user.name} adalah bot whatsapp yang dibangun dengan Nodejs, ${conn.user.name} diundang oleh @${m.sender.split(`@`)[0]}\n\nKetik ${usedPrefix}menu untuk melihat daftar perintah\nBot akan keluar secara otomatis setelah *${msToDate(global.db.data.chats[res].expired - now)}*`.trim(), wm, 'Menu', usedPrefix + `menu`, 'Owner', usedPrefix + `owner`, ftroli, { mentions: [m.sender] })
-                for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                    let data = (await conn.onWhatsApp(jid))[0] || {}
-                    if (data.exists)
-                    m.reply(`@${m.sender.split`@`[0]} telah menambahkan ${conn.user.name} ke ${await conn.getName(res)}\njid: ${res}, bot akan keluar dalam waktu: ${msToDate(global.db.data.chats[res].expired - now)}`.trim(), data.jid, { mentions: [m.sender] })
-                }
-        })
-    } else if ((isOwner || !isPrems || isROwner)) {
-        if (!args[1]) throw `Masukkan format yang benar! format: ${usedPrefix}join <link> <jumlah hari>`
-        let res = await conn.groupAcceptInvite(code)
-        conn.reply(m.chat, 'Oteeeweehhh...', m).then(async() => { 
-            var jumlahHari = 86400000 * args[1]
-            var now = new Date() * 1
-            let b = namabot
-            if (now < global.db.data.chats[res].expired) global.db.data.chats[res].expired += jumlahHari
-            else global.db.data.chats[res].expired = now + jumlahHari
-            let teks = `${namabot} adalah bot whatsapp yang dibangun dengan Nodejs dan menggunakan server yg lumayan kenceng tapi gak kenceng-kenceng banget :'v.\n\n${namabot} diundang oleh @${m.sender.split(`@`)[0]}\n\nKetik ${usedPrefix}menu untuk melihat daftar perintah\nBot akan keluar secara otomatis setelah *${msToDate(global.db.data.chats[res].expired - now)}*`.trim()
-            await conn.reply(m.chat, `Berhasil join grup *${await conn.getName(res)}*\nBot akan keluar secara otomatis setelah: ${msToDate(global.db.data.chats[res].expired - now)}`, m)
-            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != m.sender)) {
-                let data = (await conn.onWhatsApp(jid))[0] || {}
-                if (data.exists)
-                m.reply(`@${m.sender.split`@`[0]} telah menambahkan ${conn.user.name} ke ${await conn.getName(res)} jid: ${res}, bot akan keluar dalam waktu: ${msToDate(global.db.data.chats[res].expired - now)}`.trim(), data.jid, { mentions: [m.sender] })
-            }
-            await conn.send2ButtonImg(res, await (await fetch(img)).buffer(), teks, wm, 'Menu', usedPrefix + `menu`, 'Owner', usedPrefix + `owner`, ftroli)
-        })
-    } else if ((isPrems || !isOwner || !isROwner)) {
-        if (user.joincount === 0) throw `Kamu sudah melebihi token/limit memasukkan bot ke dalam group!`
-        user.joincount -= 1
-        let res = await conn.groupAcceptInvite(code)
-        conn.reply(m.chat, 'Joining group...', m).then(async() => {
-            var jumlahHari = 86400000 * 30
-            var now = new Date() * 1
-            if (now < global.db.data.chats[res].expired) global.db.data.chats[res].expired += jumlahHari
-            else global.db.data.chats[res].expired = now + jumlahHari
-                conn.reply(m.chat, `Berhasil join grup ${await conn.getName(res)}\nBot akan keluar secara otomatis setelah: ${msToDate(global.db.data.chats[res].expired - now)}.\nToken joincount mu: ${user.joincount}/1`, m)
-                for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
-                    let data = (await conn.onWhatsApp(jid))[0] || {}
-                    if (data.exists)
-                    m.reply(`@${m.sender.split`@`[0]} telah menambahkan ${conn.user.name} ke ${await conn.getName(res)} jid: ${res}, bot akan keluar dalam waktu: ${msToDate(global.db.data.chats[res].expired - now)}`.trim(), data.jid, { mentions: [m.sender] })
-                }
-            await conn.send2ButtonImg(res, await(await fetch(img)).buffer(), `${conn.user.name} adalah bot whatsapp yang dibangun dengan Nodejs, ${conn.user.name} diundang oleh @${m.sender.split(`@`)[0]}\n\nKetik ${usedPrefix}menu untuk melihat daftar perintah\nBot akan keluar secara otomatis setelah *${msToDate(global.db.data.chats[res].expired - now)}*`.trim(), wm, 'Menu', usedPrefix + `menu`, 'Owner', usedPrefix + `owner`, ftroli, { mentions: [m.sender] })
-        })
-    }
+let handler = async (m, { conn, text, isOwner, groupMetadata }) => {
+    let [_, code, expired] = text.match(linkRegex) || []
+    if (!code) throw 'Link invalid'
+    if (global.db.data.users[m.sender].joinlimit == 0) return m.reply('Maaf kamu sudah tidak bisa menggunakan free join..\nHarap hubungi *owner* kami')
+    global.db.data.users[m.sender].joinlimit -= 1
+   // let id = m.chat
+   // let groupMetadata = await conn.groupMetadata(m.chat)
+    let res = await conn.groupAcceptInvite(code)
+    expired = Math.floor(Math.min(999, Math.max(7, isOwner ? isNumber(expired) ? parseInt(expired) : 0 : 3)))
+    m.reply(`Berhasil join grup ${res} selama ${expired ? ` selama ${expired} hari` : ''}`)
+   // conn.reply(`Bot telah di undang di group: ${groupMetadata.subject}\nCode ID: ${res}`, `62895330379186@s.whatsapp.net`)
+    setTimeout(() => {
+    conn.reply(res, `*${conn.user.name}* adalah bot whatsapp yang di bangun menggunakan Nodejs, diundang oleh @${m.sender.split`@`[0]} trial selama\n*${msToDate(global.db.data.chats[res].expired - new Date() * 1)}*\n\nUntuk Melihat List *Menu* bot ketik *#menu*\n\nJika ingin di perpanjang expired group harap hubungi *owner* kami..`.trim(), null, { contextInfo: { mentionedJid: [m.sender] } })
+    }, 1500) 
+    let chats = global.db.data.chats[res]
+    if (!chats) chats = global.db.data.chats[res] = {}
+    if (expired) chats.expired = +new Date() + expired * 1000 * 60 * 60 * 24
 }
-handler.help = ['join <link> <time>']
-handler.tags = ['owner']
-handler.limit = true
-handler.command = /^(join)$/i
+//handler.help = ['join <chat.whatsapp.com>']
+//handler.tags = ['premium']
+
+handler.command = /^join$/i
+handler.premium = true
 
 module.exports = handler
+
+const isNumber = (x) => (x = parseInt(x), typeof x === 'number' && !isNaN(x))
 
 function msToDate(ms) {
     temp = ms
