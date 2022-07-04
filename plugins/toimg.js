@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   if (/webp/.test(mime)) {
     out = await webp2png(media)
   }
-  await conn.sendFile(m.chat, out, 'out.png', '', m, false, { thumbnail: out })
+  await conn.sendFile(m.chat, out, 'out.png', '_Done Tante Mwah💋_\n\nJangan Lupa Follow Ig OwnerKu Tante:\nhttps://instagram.com/kokopangeran_', m, false, { thumbnail: out })
 }
 handler.help = ['toimg']
 handler.tags = ['sticker']
