@@ -284,6 +284,14 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiSatir = isEnable
       break
+    case 'jadibot':
+      isAll = true
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
+        throw false
+      }
+      setting.jadibot = isEnable
+      break
     case 'simi':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -310,6 +318,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ detect
 ├ document
 ├ stiker
+├ jadibot
 ├ simi
 ├ welcome
 │ ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
