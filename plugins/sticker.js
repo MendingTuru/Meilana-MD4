@@ -48,13 +48,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       if (sticBuffer) await conn.sendMessage(m.chat, { sticker: sticBuffer }, {
         quoted: m,
         mimetype: 'image/webp',
-        ephemeralExpiration: 86400
+        ephemeralExpiration: 8640
       })
     }
     if (stiker) await conn.sendMessage(m.chat, { sticker: stiker }, {
       quoted: m,
       mimetype: 'image/webp',
-      ephemeralExpiration: 86400
+      ephemeralExpiration: 8640
     })
     // else throw `Gagal${m.isGroup ? ', balas gambarnya!' : ''}`
   }
