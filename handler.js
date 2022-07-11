@@ -686,7 +686,7 @@ global.dfail = async (type, m, conn) => {
         rowner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
         owner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
         mods: `👤Perintah ini hanya dapat digunakan oleh *Moderator*`,
-        premium: '👤Khusus Member _*Premium!*_\n_*Mau Jadi Member Premium?*_\n\n_*List Premium:*_\n_*5k/2minggu*_\n_*10k/permanen*_\n\n_*Selebihnya Chat OwnerKu Tante:*_\nwa.me/',
+        premium: '👤Khusus Member _*Premium!*_\n_*Mau Jadi Member Premium?*_\n\n_*List Premium:*_\n_*5k/2minggu*_\n_*10k/permanen*_\n\n_*Selebihnya Chat OwnerKu Tante:*_\nwa.me/+79811950242',
         group: `👥Perintah ini hanya dapat digunakan di grup!`,
         private: '👤Perintah ini hanya dapat digunakan di Chat Pribadi!',
         admin: '👤Perintah ini hanya untuk *Admin* grup!',
