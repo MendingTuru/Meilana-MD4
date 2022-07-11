@@ -47,7 +47,7 @@ global.urlnya = "https://www.instagram.com/kokopangeran_"
 
 //============= callButtons =============//
 global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
-global.phn = '+14502354024'
+global.phn = '+79811950242'
 
 //============= Games ================//
 global.benar = '_*Benar✅*_'
