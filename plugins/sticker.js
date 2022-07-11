@@ -5,6 +5,7 @@ const uploadImage = require('../lib/uploadImage')
 let { webp2png } = require('../lib/webp2mp4')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
+  let wsf = false
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
