@@ -21,5 +21,5 @@ let imgr = flaaa.getRandom()
     if (expired) chats.expired = +new Date() + expired * 1000 * 60 * 60 * 24
 }
 handler.command = /^join$/i
-handler.premium = false
+handler.premium = true
 export default handler
