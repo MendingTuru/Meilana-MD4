@@ -1,5 +1,5 @@
 {
-    "name": "Nauran-MD",
+    "name": "Pangeran-MD",
     "version": "2.4.0",
     "description": "Simle Bot WhatsApp with Baileys Multi Device",
     "depecrated": false,
@@ -29,7 +29,7 @@
         "stikerin",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/kokopangeran/pangeran-md",
+    "homepage": "https://github.com/mendingturu/pangeran-md",
     "author": {
         "name": "Koko Pangeran"
     },
