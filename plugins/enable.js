@@ -78,6 +78,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.viewonce = isEnable
       break
+    case 'antidelete':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.delete = !isEnable
+      break
     case 'antibadword':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -287,6 +296,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antisatir
 ├ autolevelup
 ├ antibadword
+├ delete
 ├ detect
 ├ document
 ├ stiker
