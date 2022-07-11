@@ -5,7 +5,7 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-┌─〔 %me 〕
+┌─〔 ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ-MD×፝֟͜× 〕
 ├ *%ucapan %name*
 │
 ├ Tersisa *%limit Limit*
@@ -20,7 +20,7 @@ const defaultMenu = {
 ├ Uptime: *%uptime (%muptime)*
 ├ Database: %rtotalreg dari %totalreg
 ├ Github:
-├ https://github.com/kokopangeran
+├ https://github.com/MendingTuru
 ├ Insta:
 ├ https://instagram.com/kokopangeran_
 └────
