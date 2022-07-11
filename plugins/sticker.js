@@ -5,58 +5,34 @@ const uploadImage = require('../lib/uploadImage')
 let { webp2png } = require('../lib/webp2mp4')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
-  let wsf = false
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
-    if (/webp/.test(mime)) {
+    if (/webp|image|video/g.test(mime)) {
+      if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
       let img = await q.download()
-      if (!img) throw `balas stiker dengan perintah ${usedPrefix + command}`
-      wsf = new WSF.Sticker(img, {
-        pack: global.packname,
-        author: global.author,
-        crop: false,
-      })
-    } else if (/image/.test(mime)) {
-      let img = await q.download()
-      if (!img) throw `balas gambar dengan perintah ${usedPrefix + command}`
-      wsf = new WSF.Sticker(img, {
-        pack: global.packname,
-        author: global.author,
-        crop: false,
-      })
-    } else if (/video/.test(mime)) {
-      if ((q.msg || q).seconds > 11) throw 'Maksimal 10 detik!'
-      let img = await q.download()
-      if (!img) throw `balas video dengan perintah ${usedPrefix + command}`
-      wsf = new WSF.Sticker(img, {
-        pack: global.packname,
-        author: global.author,
-        crop: true,
-      })
+      if (!img) throw `balas gambar/video/stiker dengan perintah ${usedPrefix + command}`
+      let out
+      try {
+        if (/webp/g.test(mime)) out = await webp2png(img)
+        else if (/image/g.test(mime)) out = await uploadImage(img)
+        else if (/video/g.test(mime)) out = await uploadFile(img)
+        if (!isUrl(out)) out = await uploadImage(img)
+        stiker = await sticker(false, out, global.packname, global.author)
+      } catch (e) {
+        console.error(e)
+        if (!stiker) stiker = await sticker(img, false, global.packname, global.author)
+      }
     } else if (args[0]) {
       if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
-      else throw 'URL tidak valid!'
+      else return m.reply('URL tidak valid!')
     }
   } catch (e) {
-    throw e
-  }
-  finally {
-    if (wsf) {
-      await wsf.build()
-      const sticBuffer = await wsf.get()
-      if (sticBuffer) await conn.sendMessage(m.chat, { sticker: sticBuffer }, {
-        quoted: m,
-        mimetype: 'image/webp',
-        ephemeralExpiration: 100
-      })
-    }
-    if (stiker) await conn.sendMessage(m.chat, { sticker: stiker }, {
-      quoted: m,
-      mimetype: 'image/webp',
-      ephemeralExpiration: 100
-    })
-    // else throw `Gagal${m.isGroup ? ', balas gambarnya!' : ''}`
+    console.error(e)
+    if (!stiker) stiker = e
+  } finally {
+    if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
+    else throw 'Conversion failed'
   }
 }
 handler.help = ['stiker', 'stiker <url>']
