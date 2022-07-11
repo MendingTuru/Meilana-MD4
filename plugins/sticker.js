@@ -5,7 +5,7 @@ const uploadImage = require('../lib/uploadImage')
 let { webp2png } = require('../lib/webp2mp4')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
-  let wsf = true
+  let wsf = false
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
@@ -48,13 +48,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       if (sticBuffer) await conn.sendMessage(m.chat, { sticker: sticBuffer }, {
         quoted: m,
         mimetype: 'image/webp',
-        ephemeralExpiration: 8640
+        ephemeralExpiration: 100
       })
     }
     if (stiker) await conn.sendMessage(m.chat, { sticker: stiker }, {
       quoted: m,
       mimetype: 'image/webp',
-      ephemeralExpiration: 8640
+      ephemeralExpiration: 100
     })
     // else throw `Gagal${m.isGroup ? ', balas gambarnya!' : ''}`
   }
