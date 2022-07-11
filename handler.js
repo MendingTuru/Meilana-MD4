@@ -255,18 +255,17 @@ module.exports = {
                     if (!('sBye' in chat)) chat.sBye = ''
                     if (!('sPromote' in chat)) chat.sPromote = ''
                     if (!('sDemote' in chat)) chat.sDemote = ''
-                    if (!('desc' in chat)) chat.desc = true
-                    if (!('descUpdate' in chat)) chat.descUpdate = true
+                    if (!('desc' in chat)) chat.desc = false
+                    if (!('descUpdate' in chat)) chat.descUpdate = false
                     if (!('stiker' in chat)) chat.stiker = false
-                    if (!('delete' in chat)) chat.delete = true
-                    if (!('antiLink' in chat)) chat.antiLink = true
-                    if (!('antiOrangLuar' in chat)) chat.antiOrangLuar = true
+                    if (!('delete' in chat)) chat.delete = false
+                    if (!('antiLink' in chat)) chat.antiLink = false
                     if (!isNumber(chat.expired)) chat.expired = 0
-                    if (!('antiBadword' in chat)) chat.antiBadword = true
-                    if (!('antispam' in chat)) chat.antispam = true
+                    if (!('antiBadword' in chat)) chat.antiBadword = false
+                    if (!('antispam' in chat)) chat.antispam = false
                     if (!('antitroli' in chat)) chat.antitroli = false
                     if (!('antivirtex' in chat)) chat.antivirtex = false
-                    if (!('viewonce' in chat)) chat.viewonce = true
+                    if (!('viewonce' in chat)) chat.viewonce = false
                     if (!('nsfw' in chat)) chat.nsfw = false
                     if (!('simi' in chat)) chat.simi = false
                     if (!('clear' in chat)) chat.clear = false
@@ -287,9 +286,8 @@ module.exports = {
                     stiker: false,
                     delete: false,
                     antiLink: false,
-                    antiOrangLuar: false,
                     expired: 0,
-                    antiBadword: true,
+                    antiBadword: false,
                     antispam: true,
                     antitroli: false,
                     antivirtex: false,
@@ -685,18 +683,18 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = async (type, m, conn) => {
     let msg = {
-        rowner: `Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
-        owner: `Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
-        mods: `Perintah ini hanya dapat digunakan oleh *Moderator*`,
-        premium: 'Perintah ini hanya untuk member _*Premium*_ !',
-        group: `Perintah ini hanya dapat digunakan di grup!`,
-        private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
-        admin: 'Perintah ini hanya untuk *Admin* grup!',
-        botAdmin: 'Jadikan Bot _*Admin*_ Dulu Tolol Biar Bisa Tag Sama Antilink nya!',
-        unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
-        nsfw: `NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini!`,
-        rpg: `RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini!`,
-        restrict: 'Fitur ini di *disable*!'
+        rowner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
+        owner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
+        mods: `👤Perintah ini hanya dapat digunakan oleh *Moderator*`,
+        premium: '👤Perintah ini hanya untuk member _*Premium*_ !',
+        group: `👥Perintah ini hanya dapat digunakan di grup!`,
+        private: '👤Perintah ini hanya dapat digunakan di Chat Pribadi!',
+        admin: '👤Perintah ini hanya untuk *Admin* grup!',
+        botAdmin: '👤Jadikan Bot _*Admin*_ Dulu Tolol, Biar Bisa Gunain Fitur ya!',
+        unreg: '👤Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
+        nsfw: `👤NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini!`,
+        rpg: `👤RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini!`,
+        restrict: '👤Fitur ini di *disable*!'
     }[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })
 }
