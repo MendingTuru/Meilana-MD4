@@ -275,7 +275,7 @@ module.exports = {
                     closeGroup: false,
                     add: 0,
                     isBanned: false,
-                    welcome: true,
+                    welcome: false,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
