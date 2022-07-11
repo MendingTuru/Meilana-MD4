@@ -20,7 +20,7 @@ module.exports = {
         if (!m) return
         
         global.namabot = await this.user.name
-        global.wm = 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ' + ' ᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
+        global.wm = namabot + ' ву ƒσкυѕ ι∂'
         //console.log(JSON.stringify(m, null, 4))
         try {
             m = simple.smsg(this, m) || m
@@ -99,7 +99,7 @@ module.exports = {
                     if (!isNumber(user.lasthunt)) user.lasthunt = 0
                     if (!isNumber(user.lastweekly)) user.lastweekly = 0
                     if (!isNumber(user.lastmonthly)) user.lastmontly = 0  
-                    if (!('registered' in user)) user.registered = true
+                    if (!('registered' in user)) user.registered = false
                     if (!user.registered) {
                     if (!('name' in user)) user.name = this.getName(m.sender)
                     if (!('email' in user)) user.email = ''
@@ -204,7 +204,7 @@ module.exports = {
                     lasthunt: 0,
                     lastweekly: 0,
                     lastmonthly: 0,
-                    registered: true,
+                    registered: false,
                     name: this.getName(m.sender),
                     email: '',
                     label: '',
@@ -257,39 +257,41 @@ module.exports = {
                     if (!('sDemote' in chat)) chat.sDemote = ''
                     if (!('desc' in chat)) chat.desc = true
                     if (!('descUpdate' in chat)) chat.descUpdate = true
-                    if (!('stiker' in chat)) chat.stiker = true
+                    if (!('stiker' in chat)) chat.stiker = false
+                    if (!('delete' in chat)) chat.delete = false
                     if (!('antiLink' in chat)) chat.antiLink = true
                     if (!isNumber(chat.expired)) chat.expired = 0
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antispam' in chat)) chat.antispam = true
-                    if (!('antitroli' in chat)) chat.antitroli = true
-                    if (!('antivirtex' in chat)) chat.antivirtex = true
+                    if (!('antitroli' in chat)) chat.antitroli = false
+                    if (!('antivirtex' in chat)) chat.antivirtex = false
                     if (!('viewonce' in chat)) chat.viewonce = true
-                    if (!('nsfw' in chat)) chat.nsfw = true
-                    if (!('simi' in chat)) chat.simi = true
-                    if (!('clear' in chat)) chat.clear = true
+                    if (!('nsfw' in chat)) chat.nsfw = false
+                    if (!('simi' in chat)) chat.simi = false
+                    if (!('clear' in chat)) chat.clear = false
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0 
                 } else global.db.data.chats[m.chat] = {
                     name: this.getName(m.chat),
                     closeGroup: false,
                     add: 0,
                     isBanned: false,
-                    welcome: false,
-                    detect: false,
+                    welcome: true,
+                    detect: true,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    desc: false,
-                    descUpdate: false,
+                    desc: true,
+                    descUpdate: true,
                     stiker: false,
-                    antiLink: false,
+                    delete: false,
+                    antiLink: true,
                     expired: 0,
-                    antiBadword: false,
+                    antiBadword: true,
                     antispam: true,
                     antitroli: false,
                     antivirtex: false,
-                    viewonce: false,
+                    viewonce: true,
                     nsfw: false,
                     simi: false,
                     clear: false,
@@ -305,7 +307,7 @@ module.exports = {
                     if (!'backup' in settings) settings.backup = false
                     if (!isNumber(settings.backupDB)) settings.backupDB = 0
                     if (!'groupOnly' in settings) settings.groupOnly = false
-                    if (!'jadibot' in settings) settings.jadibot = true
+                    if (!'jadibot' in settings) settings.jadibot = false
                     if (!isNumber(settings.status)) settings.status = 0
                     if (!'epe' in settings) settings.epe = true
                     if (!'game' in settings) settings.game = true
@@ -606,7 +608,7 @@ module.exports = {
 
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                              (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
                             let wel = API('males', '/welcome2', {
                                 profile: pp,
                                 username: await this.getName(user),
@@ -621,7 +623,7 @@ module.exports = {
                                 groupname: await this.getName(id),
                                 membercount: groupMetadata.participants.length
                             })
-                            await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa beban', action === 'add' ? '.intro' : 'MendingTuru')
+                            await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'FokusID')
                         }
                     }
                 }
@@ -660,21 +662,39 @@ module.exports = {
             await this.sendButtonDoc(id, text, wm, 'Matikan Fitur', `.off detect`, global.fkontak, { contextInfo: global.adReply.contextInfo, mentions: await this.parseMention(text) })
         }
     },
+    async delete({ remoteJid, fromMe, id, participant }) {
+        if (fromMe) return
+        let chats = Object.entries(await this.chats).find(([user, data]) => data.messages && data.messages[id])
+        if (!chats) return
+        let msg = JSON.parse(JSON.stringify(chats[1].messages[id]))
+        let chat = global.db.data.chats[msg.key.remoteJid] || {}
+        if (chat.delete) return
+        await this.sendButton(msg.key.remoteJid, `
+Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
+Untuk mematikan fitur ini, ketik
+*.enable delete*
+`.trim(), wm, 'Matikan Fitur ini', '.enable delete', msg, {
+            mentions: [participant]
+        })
+        await this.delay(1000)
+        this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
+    }
+}
 
 global.dfail = async (type, m, conn) => {
     let msg = {
         rowner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
         owner: `👤Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_`,
         mods: `👤Perintah ini hanya dapat digunakan oleh *Moderator*`,
-        premium: '👤Khusus Member _*Premium!*_\n_*Mau Jadi Member Premium?*_\n\n_*List Harga:*_\n_*👤5K/2Minggu*_\n_*👥10K/Permanen*_\n\nSelebihnya Chat OwnerKu Tante:\nwa.me/+79811950242',
+        premium: '👤Khusus Member _*Premium!*_\n_*Mau Jadi Member Premium?*_\n\n_*List Premium:*_\n_*5k/2minggu*_\n_*10k/permanen*_\n\n_*Selebihnya Chat OwnerKu Tante:*_\nwa.me/',
         group: `👥Perintah ini hanya dapat digunakan di grup!`,
         private: '👤Perintah ini hanya dapat digunakan di Chat Pribadi!',
         admin: '👤Perintah ini hanya untuk *Admin* grup!',
-        botAdmin: '👤Jadikan Bot _*Admin*_ Dulu Tolol, Biar Bisa Gunain Fitur ya!',
+        botAdmin: '👻Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
         unreg: '👤Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
         nsfw: `👤NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini!`,
         rpg: `👤RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini!`,
-        restrict: '👤Fitur ini di *disable*!'
+        restrict: 'Fitur ini di *disable*!'
     }[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })
 }
