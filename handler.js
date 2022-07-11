@@ -291,7 +291,7 @@ module.exports = {
                     antispam: true,
                     antitroli: false,
                     antivirtex: false,
-                    viewonce: true,
+                    viewonce: false,
                     nsfw: false,
                     simi: false,
                     clear: false,
