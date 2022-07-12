@@ -7,7 +7,7 @@ let handler = async(m, { isOwner, isAdmin, conn, participant, text, participants
   for (let mem of participants) {
   teks += `├💌 @${mem.id.split('@')[0]}\n`}
   teks += `└────\n`
-  conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) mentions: [participant] }, )
+  conn.sendMessage(m.chat, { text: teks, mentions: participant, mentions: participants.map(a => a.id) }, )
 }
 handler.help = ['tagall <message>']
 handler.tags = ['group']
