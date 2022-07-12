@@ -1,4 +1,4 @@
-let handler = async(m, { isOwner, isAdmin, conn, text, participants }) => {
+let handler = async(m, { isOwner, isAdmin, conn, participant, text, participants }) => {
   if (!(isAdmin || isOwner)) {
                 global.dfail('admin', m, conn)
                 throw false
@@ -7,7 +7,7 @@ let handler = async(m, { isOwner, isAdmin, conn, text, participants }) => {
   for (let mem of participants) {
   teks += `├💌 @${mem.id.split('@')[0]}\n`}
   teks += `└────\n`
-  conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, )
+  conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) mentions: [participant] }, )
 }
 handler.help = ['tagall <message>']
 handler.tags = ['group']
