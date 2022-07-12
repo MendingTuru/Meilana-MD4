@@ -35,7 +35,27 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
       else throw 'URL tidak valid!'
     }
-  } 
+  } catch (e) {
+    throw e
+  }
+  finally {
+    if (wsf) {
+      await wsf.build()
+      const sticBuffer = await wsf.get()
+      if (sticBuffer) await conn.sendMessage(m.chat, { sticker: sticBuffer }, {
+        quoted: m,
+        mimetype: 'image/webp',
+        ephemeralExpiration: 86400
+      })
+    }
+    if (stiker) await conn.sendMessage(m.chat, { sticker: stiker }, {
+      quoted: m,
+      mimetype: 'image/webp',
+      ephemeralExpiration: 86400
+    })
+    // else throw `Gagal${m.isGroup ? ', balas gambarnya!' : ''}`
+  }
+}
 handler.help = ['stiker', 'stiker <url>']
 handler.tags = ['sticker']
 handler.command = /^s(tic?ker)?(gif)?(wm)?$/i
