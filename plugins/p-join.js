@@ -65,7 +65,8 @@ handler.help = ['join <link> <time>']
 handler.tags = ['owner']
 handler.limit = true
 handler.command = /^(join)$/i
-
+handler.premium = true
+handler.private = true
 module.exports = handler
 
 function msToDate(ms) {
