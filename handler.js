@@ -77,6 +77,7 @@ module.exports = {
                     if (!isNumber(user.afk)) user.afk = -1
                     if (!('afkReason' in user)) user.afkReason = ''
                     if (!('pasangan' in user)) user.pasangan = ''
+                    if (!('sewa' in user)) user.sewa = false
                     // RPG
                     if (!isNumber(user.anakkucing)) user.anakkucing = 0
                     if (!isNumber(user.anakkuda)) user.anakkuda = 0
