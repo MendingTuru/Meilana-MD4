@@ -76,4 +76,4 @@ handler.help = ['sewa', 'premium']
 handler.tags = ['main']
 handler.command = /^(sewa(bot)?|premium)$/i
 
-export default handler
+module.exports = handler
