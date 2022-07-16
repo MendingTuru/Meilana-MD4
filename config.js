@@ -66,6 +66,16 @@ global.author = data.owner;
 global.img = pickRandom(waifu)
 global.fla = pickRandom(flaaa)
 
+/*============== PAYMENT ==============*/
+global.pdana = '087832147584'
+global.povo = '087832147584'
+global.pgopay = '087832147584'
+global.ppulsa = '087832147584'
+global.ppulsa2 = '087832147584'
+global.psaweria = 'https://saweria.com/kokopangeran'
+
+
+
 global.rpg = {
   emoticon(string) {
     string = string.toLowerCase()
