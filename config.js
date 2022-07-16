@@ -67,6 +67,15 @@ global.img = pickRandom(waifu)
 global.fla = pickRandom(flaaa)
 
 /*============== PAYMENT ==============*/
+global.saweria = "https://saweria.co/kokopangeran"// website saweria.co
+global.dana = ["087832147584"]
+global.pulsa = ["087832147584"] //pulsa here
+global.trakteer = "https://trakteer.id/kokopangeran"//Link url https://
+global.paypal = "pangeran.dwnta01@gmail.com" //paypal email
+global.gopay = "087832147584"//Numver for Payment digital Gopay Gojek
+
+
+/*============== PAYMENT ==============*/
 global.pdana = '087832147584'
 global.povo = '087832147584'
 global.pgopay = '087832147584'
