@@ -78,6 +78,7 @@ module.exports = {
                     if (!('afkReason' in user)) user.afkReason = ''
                     if (!('pasangan' in user)) user.pasangan = ''
                     if (!('sewa' in user)) user.sewa = false
+                    if (!('premium' in user)) user.premium = false
                     // RPG
                     if (!isNumber(user.anakkucing)) user.anakkucing = 0
                     if (!isNumber(user.anakkuda)) user.anakkuda = 0
@@ -262,6 +263,8 @@ module.exports = {
                     if (!('stiker' in chat)) chat.stiker = false
                     if (!('delete' in chat)) chat.delete = false
                     if (!('antiLink' in chat)) chat.antiLink = true
+                    if (!('premium' in chat)) chat.premium = false
+                    if (!('premiumTime' in chat)) chat.premiumTime = false
                     if (!isNumber(chat.expired)) chat.expired = 0
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antispam' in chat)) chat.antispam = true
@@ -288,6 +291,8 @@ module.exports = {
                     stiker: false,
                     delete: true,
                     antiLink: true,
+	            premium: false,
+	            premiumTime: false,
                     expired: 0,
                     antiBadword: true,
                     antispam: true,
