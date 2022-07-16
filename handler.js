@@ -193,6 +193,7 @@ module.exports = {
                     string: 0,
                     sword: 0,
                     sworddurability: 0,
+                    sewa: false,
                     pickaxe: 0,
                     pickaxedurability: 0,
                     fishingrod: 0,
