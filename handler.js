@@ -20,7 +20,7 @@ module.exports = {
         if (!m) return
         
         global.namabot = await this.user.name
-        global.wm = 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ' + ' ᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
+        global.wm = 'xrnaaazy_' + ' ♡ ᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
         //console.log(JSON.stringify(m, null, 4))
         try {
             m = simple.smsg(this, m) || m
