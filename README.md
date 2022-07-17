@@ -1,5 +1,4 @@
-# Family-Bot
-<img src="https://telegra.ph/file/be35f3f279c9af2d607e8.jpg"</img>
+# Pangeran-MD
 <a href="https://visitor-badge.glitch.me/badge?page_id=Fokusdotid/Family-MD"><img title="Visitor" src="https://visitor-badge.glitch.me/badge?page_id=Fokusdotid/Family-MD"></a>
 <a href="https://github.com/Fokusdotid/Family-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Fokusdotid/Family-MD?label=Forks&color=blue&style=flat-square"></a>
 <a href="https://github.com/Fokusdotid/Family-MD/watchers"><img title="Watchers" src="https://img.shields.io/github/watchers/Fokusdotid/Family-MD?label=Watchers&color=green&style=flat-square"></a>
