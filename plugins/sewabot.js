@@ -12,15 +12,18 @@ let handler = async (m, { conn }) => {
   title: `${await conn.getName(conn.user.jid)}`,
   description: ` *• SEWA BOT & UP TO PREMIUM •*
         
-1. Grup / 30 Hari
-Rp. 15.000 Dana
-Rp. 15.000 Pulsa
-2. Premium / 30 Hari
-Rp. 10.000 Dana
-Rp. 10.000 Pulsa
-3. Premium + Grup / 30 Hari
-Rp. 20.000 Dana
-Rp. 20.000 Pulsa
+_*👤Grup / 30 Hari*_
+_*✔️Rp. 15.000 Dana*_
+_*✔️Rp. 15.000 Pulsa MyXL*_
+
+_*👤Premium / 30 Hari*_
+_*✔️Rp. 10.000 Dana*_
+_*✔️Rp. 10.000 Pulsa MyXL*_
+
+_*👥Premium + Grup / 30 Hari*_
+_*✔️Rp. 20.000 Dana*_
+_*✔️Rp. 20.000 Pulsa MyXL*_
+
 wa.me/${owner[0]}
 *Bukan Bot!!!*
 *Owner ${conn.user.name}*
@@ -42,9 +45,9 @@ wa.me/${owner[0]}
   conn.sendContact(m.chat, data.map(([id, name]) => [id, name]), m)
 
 }
-handler.help = ['sewa']
+handler.help = ['sewa', 'premium']
 handler.tags = ['main']
-handler.command = /^(sewa)$/i
+handler.command = /^(sewa|premium)$/i
 
 module.exports = handler
 
