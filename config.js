@@ -7,6 +7,7 @@ let data = JSON.parse(fs.readFileSync('./data.json'))
 
 global.owner = JSON.parse(fs.readFileSync('./settings/owner.json')) // Put your number to folder /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./settings/moderator.json')) // Want some help?
+global.prems = JSON.parse(fs.readFileSync('./settings/premium.json'))
 
 global.APIs = { // API Prefix
   // name: 'https://website'
