@@ -679,22 +679,6 @@ Untuk mematikan fitur ini, ketik
         await this.delay(1000)
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
     }
-},
-
-async onCall(json) {
-    let { from } = json[2][0][1]
-    let users = global.db.data.users
-    let user = users[from] || {}
-    if (user.whitelist) return
-    switch (this.callWhitelistMode) {
-      case 'mycontact':
-        if (from in this.contacts && 'short' in this.contacts[from])
-          return
-        break
-    }
-    await this.sendMessage(from, 'Maaf, karena anda menelfon bot. anda diblokir otomatis', MessageType.extendedText)
-    await this.blockUser(from, 'add')
-  }
 }
 
 global.dfail = async (type, m, conn) => {
