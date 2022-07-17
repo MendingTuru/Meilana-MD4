@@ -307,7 +307,7 @@ module.exports = {
                     if (!'backup' in settings) settings.backup = false
                     if (!isNumber(settings.backupDB)) settings.backupDB = 0
                     if (!'groupOnly' in settings) settings.groupOnly = false
-                    if (!'jadibot' in settings) settings.jadibot = false
+                    if (!'jadibot' in settings) settings.groupOnly = false
                     if (!isNumber(settings.status)) settings.status = 0
                     if (!'epe' in settings) settings.epe = true
                     if (!'game' in settings) settings.game = true
@@ -679,6 +679,22 @@ Untuk mematikan fitur ini, ketik
         await this.delay(1000)
         this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
     }
+},
+
+async onCall(json) {
+    let { from } = json[2][0][1]
+    let users = global.db.data.users
+    let user = users[from] || {}
+    if (user.whitelist) return
+    switch (this.callWhitelistMode) {
+      case 'mycontact':
+        if (from in this.contacts && 'short' in this.contacts[from])
+          return
+        break
+    }
+    await this.sendMessage(from, 'Maaf, karena anda menelfon bot. anda diblokir otomatis', MessageType.extendedText)
+    await this.blockUser(from, 'add')
+  }
 }
 
 global.dfail = async (type, m, conn) => {
