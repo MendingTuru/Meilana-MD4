@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn }) => {
-  let pepe = 'https://i.ibb.co/1LF6QHQ/pangeran.jpg'
+  let pepe = 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg'
   let baper = await fetch(pepe).then(a => a.buffer())
 
   let aine = '79811950242@s.whatsapp.net'
