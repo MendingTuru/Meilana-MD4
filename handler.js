@@ -1,12 +1,3 @@
-
-
-autoreyad = false
-autoon = false
-autoketik = false
-autovn = true
-
-
-
 let { Presence } = require('@adiwajshing/baileys')
 let { performance } = require('perf_hooks')
 const simple = require('./lib/simple')
@@ -336,10 +327,6 @@ module.exports = {
             } catch (e) {
                 console.error(e)
             }
-            if (autoon === true) conn.updatePresence(m.chat, Presence.available) //
-            if (autoketik === true) conn.updatePresence(m.chat, Presence.composing) //
-            if (autovn === true) conn.updatePresence(m.chat, Presence.recording) //
-            if (autoreyad === true) await this.chatRead(m.chat).catch(() => { })
             if (opts['nyimak']) return
             if (!m.fromMe && opts['self']) return
             if (opts['pconly'] && m.chat.endsWith('s.whatsapp.net')) return
