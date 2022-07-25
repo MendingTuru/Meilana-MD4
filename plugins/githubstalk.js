@@ -29,6 +29,5 @@ handler.help = ['githubstalk'].map(v => v + ' <query>')
 handler.tags = ['stalk']
 handler.command = /^(githubstalk)$/i
 handler.limit = true
-handler.premium = true
 
 module.exports = handler
