@@ -22,7 +22,6 @@ handler.help = ['igstalk <username>']
 handler.tags = ['stalk']
 handler.command = /^(igstalk)$/i
 handler.limit = true
-handler.premium = true
 
 module.exports = handler
 
