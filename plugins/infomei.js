@@ -5,13 +5,13 @@ conn.reply(m.chat, `
 │ ✎ _Sekolah_ : Sudah Lulus
 │ ✎ _Umur_ : 18th
 │ ✎ _Asal_ : Tanggerang-Banten
-│ ✎ _Status_ : Cewenya Pangeran
+│ ✎ _Status_ : Cewenya Pangeran♡
 │ ✎ _Youtube_ :
 │    https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ
 │ ✎ _Instagram_ : 
 │    instagram.com/kokopangeran_
 │ ✎ _Instagram_ : 
-│    instagram.com/
+│    instagram.com/xrnaaazy_
 │ ✎ _WhatsApp_ :
 │    wa.me/6283844508188
 ╰───────────────────
