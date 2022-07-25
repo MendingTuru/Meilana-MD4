@@ -24,6 +24,5 @@ handler.help = ['tiktokstalk'].map(v => v + ' <username>')
 handler.tags = ['stalk']
 handler.command = /^(tiktokstalk)$/i
 handler.limit = true
-handler.premium = true
 
 module.exports = handler
