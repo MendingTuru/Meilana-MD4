@@ -1,6 +1,6 @@
 let handler  = async (m, { conn, usedPrefix }) => { 
 conn.reply(m.chat, `
-╭─˗ˏˋ *INFORMASI OWNER* ´ˎ˗
+╭─˗ˏˋ *INFORMASI PANGERAN* ´ˎ˗
 │ ✎ _Nama_ : ᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
 │ ✎ _Sekolah_ : Sudah Lulus
 │ ✎ _Umur_ : 20th
@@ -13,7 +13,7 @@ conn.reply(m.chat, `
 │ ✎ _Instagram G_ : 
 │    instagram.com/xrnaaazy_
 │ ✎ _WhatsApp_ :
-│    wa.me/6287832147584
+│    wa.me/6285929970260
 ╰───────────────────
 `.trim(), m)
 }
