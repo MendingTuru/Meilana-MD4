@@ -100,7 +100,7 @@ async function connectionUpdate(update) {
   if (connection == 'connecting') console.log(chalk.redBright('🕛 Mengaktifkan Bot, Harap tunggu sebentar...'))
   if (connection == 'open') {
       console.log(chalk.green('Connected✅'))
-      await conn.hehe("79811950242@s.whatsapp.net", global.ftoli)
+      await conn.hehe("6285929970260@s.whatsapp.net", global.ftoli)
   }
   if (connection == 'close') console.log(chalk.red('⏹️Koneksi berhenti dan mencoba menghubungkan kembali...'))
   global.timestamp.connect = new Date
