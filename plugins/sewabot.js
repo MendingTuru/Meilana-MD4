@@ -3,14 +3,14 @@ let handler = async (m, { conn }) => {
   let pepe = 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg'
   let baper = await fetch(pepe).then(a => a.buffer())
 
-  let aine = '79811950242@s.whatsapp.net'
+  let aine = '6285929970260@s.whatsapp.net'
   let a = await conn.profilePictureUrl(conn.user.jid, 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
   let b = await conn.profilePictureUrl(owner[0]+'@s.whatsapp.net', 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
   let c = pickRandom([a, b])
   let d = await fetch(c).then(a => a.buffer())
   let prepare = await require('@adiwajshing/baileys').generateWAMessageFromContent(m.key.remoteJid,{listMessage:{
   title: `${await conn.getName(conn.user.jid)}`,
-  description: ` *• SEWA BOT & UP TO PREMIUM •*
+  description: ` *•SEWA BOT & UP TO PREMIUM•*
         
 _*👤Grup / 30 Hari*_
 _*✔️Rp. 15.000 Dana*_
@@ -36,7 +36,7 @@ wa.me/${owner[0]}
   products:[{productId:'7487741964584083'}]}],
   headerImage: { productId: '7487741964584083',
   jpegThumbnail: baper },
-  businessOwnerJid: `79811950242@s.whatsapp.net`
+  businessOwnerJid: `6285929970260@s.whatsapp.net`
   },
   footerText: 'https://MendingTuru.github.io',
   }},{})
