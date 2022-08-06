@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'stalk', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -47,7 +47,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
-    'group': 'Grup',
+    'group': 'Group',
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
@@ -81,7 +81,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
   }
-  if (teks == 'grup') tags = {
+  if (teks == 'group') tags = {
     'group': 'Grup'
   }
   if (teks == 'premium') tags = {
