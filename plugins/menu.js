@@ -5,39 +5,37 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-┌─〔 ᵈʳᴋᴏᴋᴏ-ᴍᴅ×፝֟͜× 〕
-├ *%ucapan %name*
-│
-├ Tersisa *%limit Limit*
-├ Role *%role*
-├ Level *%level (%exp / %maxexp)* [%xp4levelup]
-├ %totalexp XP secara Total
-│
-├ Tanggal: *%week %weton, %date*
-├ Tanggal Islam: *%dateIslamic*
-├ Waktu: *%time*
-│
-├ Uptime: *%uptime (%muptime)*
-├ Database: %rtotalreg dari %totalreg
-├ Github:
-├ https://github.com/MendingTuru
-├ Insta:
-├ https://instagram.com/xrnaaazy_
-└────
+┏━━〔ᵈʳᴋᴏᴋᴏ-ᴍᴅ×፝֟͜×〕━⬣
+┃➤ *%ucapan %name*
+┃
+┃➤ Tersisa *%limit Limit*
+┃➤ Role *%role*
+┃➤ Level *%level (%exp / %maxexp)* [%xp4levelup]
+┃➤ %totalexp XP secara Total
+┃
+┃➤ Tanggal: *%week %weton, %date*
+┃➤ Tanggal Islam: *%dateIslamic*
+┃➤ Waktu: *%time*
+┃
+┃➤ Uptime: *%uptime (%muptime)*
+┃➤ Database: %rtotalreg dari %totalreg
+┃➤ Github:
+┃➤ https://github.com/MendingTuru
+┗━━━━━━⬣
 %readmore`.trim(),
-  header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└────\n',
+  header: '┏━━〔 %category 〕━⬣',
+  body: '┃➤ %cmd %islimit %isPremium',
+  footer: '┗━━━━⬣\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-
+    
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'stalk', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'maker', 'nsfw', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -51,7 +49,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
+    'maker': 'MagerNulis & Logo',
+    'nsfw': 'Anime Hentai',
+    'asupan': 'Asupan 18+',
+    'bokep': 'Bokep 22+',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
@@ -60,7 +61,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
     'audio': 'Pengubah Suara',
-    'stalk': 'Stalkers',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     '': 'Tanpa Kategori',
@@ -72,7 +72,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
   }
-  if (teks == 'stiker') tags = {
+  if (teks == 'sticker') tags = {
     'sticker': 'Stiker'
   }
   if (teks == 'kerangajaib') tags = {
@@ -82,7 +82,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quotes': 'Quotes'
   }
   if (teks == 'group') tags = {
-    'group': 'Grup'
+    'group': 'Group'
   }
   if (teks == 'premium') tags = {
     'premium': 'Premium'
@@ -93,8 +93,13 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
   }
-  if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
+  if (teks == 'maker') tags = {
+    'maker': 'MagerNulis & Logo'
+  }
+  if (teks == 'nsfw') tags = {
+    'nsfw': 'Anime Hentai',
+    'asupan': 'Asupan 18+',
+    'bokep': 'Bokep 22+'
   }
   if (teks == 'downloader') tags = {
     'downloader': 'Downloader'
@@ -117,9 +122,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
-  }
-  if (teks == 'stalk') tags = {
-    'stalk': 'Stalkers'
   }
   if (teks == 'jadibot') tags = {
     'jadibot': 'Jadi Bot'
@@ -200,25 +202,25 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Semua Perintah', rowId: `${_p}? all` },
           { title: 'Game', rowId: `${_p}? game` },
           { title: 'XP', rowId: `${_p}? xp` },
-          { title: 'Stiker', rowId: `${_p}? stiker` },
+          { title: 'Sticker', rowId: `${_p}? sticker` },
           { title: 'Kerang Ajaib', rowId: `${_p}? kerangajaib` },
           { title: 'Quotes', rowId: `${_p}? quotes` },
-          { title: 'Grup', rowId: `${_p}? grup` },
+          { title: 'Group', rowId: `${_p}? group` },
           { title: 'Premium', rowId: `${_p}? premium` },
           { title: 'Internet', rowId: `${_p}? internet` },
+          { title: 'Fitur Dewasa 22+', rowId: `${_p}? nsfw` },
           { title: 'Anonymous', rowId: `${_p}? anonymous` },
-          { title: 'Nulis & Logo', rowId: `${_p}? nulis` },
+          { title: 'Nulis & Logo', rowId: `${_p}? maker` },
           { title: 'Downloader', rowId: `${_p}? downloader` },
           { title: 'Tools', rowId: `${_p}? tools` },
           { title: 'Fun', rowId: `${_p}? fun`},
           { title: 'Database', rowId: `${_p}? database` },
           { title: 'Vote & Absen', rowId: `${_p}? vote` },
           { title: "Al-Qur\'an", rowId: `${_p}? quran` },
-          { title: 'Pengubah Suara', rowId: `${_p}? audio` },
-          { title: 'Stalkers', rowId: `${_p}? stalk` },
+          { title: 'Pengubah Suara', description: 'Fitur Pengubah Suara Kidz', rowId: `${_p}? audio` },
           { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
           { title: 'Info', rowId: `${_p}? info` },
-          { title: 'Tanpa Kategori', rowId: `${_p}? tanpakategori` },
+          { title: 'Thanks To', rowId: `${_p}? tqto` },
           { title: 'Owner', rowId: `${_p}? owner` },
         ]
       }
@@ -228,7 +230,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       footer: wm,
       mentions: await conn.parseMention(judul),
       title: '',
-      buttonText: "Klik Disini",
+      buttonText: "DiKlik Sayang",
       sections
     }
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
@@ -282,8 +284,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       level, limit, name, umur, money, age, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
       readmore: readMore
     }
+    m.reply('_Tunggu Sebentar Sayang. . ._')
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}infobot`)
+    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `🏅KOKO`, `${_p}owner`, `🎖RULES`, `${_p}rules`, `🎗 DONASI 🎗`, `${_p}donasi`)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
