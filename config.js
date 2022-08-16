@@ -48,7 +48,7 @@ global.urlnya = "https://www.instagram.com/kokopangeran_"
 
 //============= callButtons =============//
 global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
-global.phn = '+79811950242'
+global.phn = '+6285929970260'
 
 //============= Games ================//
 global.benar = '_*Benar✅*_'
@@ -63,7 +63,7 @@ global.author = data.owner;
 
 //=========== Requirements ==========//  
         global.colong1 = 'Ciss 📸'
-        global.colong2 = 'ʙy ᴀɢᴜᴢ ꜰᴀᴍɪʟɪᴀ'
+        global.colong2 = 'ʙy ᵈʳᴩᴀɴɢᴇʀᴀɴ-ᴍᴅ'
 global.img = pickRandom(waifu)
 global.fla = pickRandom(flaaa)
 
