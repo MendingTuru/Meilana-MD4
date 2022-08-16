@@ -22,7 +22,9 @@ handler.all = async function (m) {
 		// Ini untuk command crator/owner
 		global.kontak2 = [
          [owner[0], await this.getName(owner[0] + '@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'pangeran.dwnta01@gmail.com', true],
-         [owner[1], await this.getName(owner[1] + '@s.whatsapp.net'), 'ɴᴏᴍᴏʀ ʙᴏᴛ ᴡᴀ', 'pangeran.dwnta01@gmail.com', true], // Kalo mau di tambah tinggal copy 1baris ini di tempel di bawahnya trs di edit dikit!
+         [owner[1], await this.getName(owner[1] + '@s.whatsapp.net'), 'ɴᴏᴍᴏʀ ʙᴏᴛ ᴡᴀ', 'pangeran.dwnta01@gmail.com', true],
+         [owner[2], await this.getName(owner[2] + '@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'https://instagram.com/kokopangeran_', true],
+         [owner[3], await this.getName(owner[3] + '@s.whatsapp.net'), 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'https://instagram.com/kokopangeran_', true],  // Kalo mau di tambah tinggal copy 1baris ini di tempel di bawahnya trs di edit dikit!
         ]
         
 		// ucapan ini mah
