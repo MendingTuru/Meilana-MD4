@@ -210,10 +210,10 @@ conn.logger.level = 'debug'
  [`Radhin`](https://wa.me/6282373158947)
 
 ##### Contributors
-<a href="https://github.com/MendingTuru"><img src="https://github.com/MendingTuru.png?size=100" width="100" height="100"></a> | [![Alya Putri](https://github.com/AlyaaXd.png?size=100)](https://github.com/AlyaaXd) 
+<a href="https://github.com/MendingTuru"><img src="https://github.com/MendingTuru.png?size=100" width="100" height="100"></a> | [![Agus Familia](https://github.com/FokusDotId.png?size=100)](https://github.com/FokusDotId) 
 ---|---
-[Pangeran](https://github.com/MendingTuru) | [Alya putri](https://github.com/AlyaaXd)
-Creator | Creator |
+[Koko Pangeran](https://github.com/MendingTuru) | [Agus Familia](https://github.com/FokusDotId)
+Contributors | Creator |
 <a href="https://github.com/verdihatorou"><img src="https://github.com/verdihatorou.png?size=100" width="100" height="100"></a> | [![Radhin](https://github.com/radhin123.png?size=100)](https://github.com/radhin123) 
 [Verdi](https://github.com/verdihatorou)  | [ Radhin](https://github.com/radhin123)
 Creator | Contributors |
