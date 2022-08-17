@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'maker', 'nsfw', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'vote', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'maker', 'nsfw', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -217,10 +217,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Database', rowId: `${_p}? database` },
           { title: 'Vote & Absen', rowId: `${_p}? vote` },
           { title: "Al-Qur\'an", rowId: `${_p}? quran` },
-          { title: 'Pengubah Suara', description: 'Fitur Pengubah Suara Kidz', rowId: `${_p}? audio` },
+          { title: 'Pengubah Suara', rowId: `${_p}? audio` },
           { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
           { title: 'Info', rowId: `${_p}? info` },
-          { title: 'Thanks To', rowId: `${_p}? tqto` },
+          { title: 'Thanks To', rowId: `${_p}tqto` },
           { title: 'Owner', rowId: `${_p}? owner` },
         ]
       }
