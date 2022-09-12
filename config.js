@@ -61,6 +61,26 @@ global.multiplier = 100 // The higher, The harder levelup
 global.packname = data.namabot;
 global.author = data.owner;
 
+//=========== Design ==========//
+global.linkgc = "https://chat.whatsapp.com/JOTpyCQIWcC6wr17Ki7L0n",
+global.linkig = "https://www.instagram.com/kokopangeran_",
+global.linkgh = "https://github.com/MendingTuru",
+global.deslink = " ",
+global.titlink = "Folllow me on Instagram",
+global.bodlink = "@kokopangeran_",
+global.sa = "╭─",
+global.gx = "│✇",
+global.gy = "│•",
+global.gz = "│",
+global.sb = "╰────࿐",
+global.kki = "「",
+global.kka = "」",
+global.petik = "```",
+global.images = "https://telegra.ph/file/be35f3f279c9af2d607e8.jpg",
+global.wmnya = "ву ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ",
+global.clg1 = "Ciss 📸",
+global.clg2 = "ʙy ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×"
+
 //=========== Requirements ==========//  
         global.colong1 = 'Ciss 📸'
         global.colong2 = 'ʙy ᵈʳᴩᴀɴɢᴇʀᴀɴ-ᴍᴅ'
